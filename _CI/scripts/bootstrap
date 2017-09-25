@@ -1,0 +1,23 @@
+#!/bin/bash
+cd $(dirname $0)/../..
+
+export WORKON_HOME=$(pwd)
+
+source $(which virtualenvwrapper.sh)
+if [ $? != 0 ]
+then
+  echo "Missing prerequisite virtualenvwrapper, bailing out"
+  exit 1
+fi
+
+if (! test -d "$WORKON_HOME/.taxydromikilib")
+then
+  echo "Creating virtual env for .taxydromikilib"
+  mkvirtualenv ".taxydromikilib"
+fi
+
+echo "Working on virtualenv taxydromikilib"
+source "$WORKON_HOME/.taxydromikilib/bin/activate"
+
+echo "Installing python package requirements.."
+pip install -r requirements.txt

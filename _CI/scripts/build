@@ -1,0 +1,26 @@
+#!/bin/bash --login
+set -e
+cd $(dirname $0)/../..
+
+. _CI/scripts/bootstrap
+
+rm -rf build dist
+
+# we want all these files to exist in the actual package
+cp .VERSION taxydromikilib/.VERSION
+cp LICENSE taxydromikilib/LICENSE
+cp AUTHORS.rst taxydromikilib/AUTHORS.rst
+cp CONTRIBUTING.rst taxydromikilib/CONTRIBUTING.rst
+cp HISTORY.rst taxydromikilib/HISTORY.rst
+cp README.rst taxydromikilib/README.rst
+cp USAGE.rst taxydromikilib/USAGE.rst
+
+python setup.py sdist bdist_egg
+
+rm taxydromikilib/.VERSION
+rm taxydromikilib/LICENSE
+rm taxydromikilib/AUTHORS.rst
+rm taxydromikilib/CONTRIBUTING.rst
+rm taxydromikilib/HISTORY.rst
+rm taxydromikilib/README.rst
+rm taxydromikilib/USAGE.rst
