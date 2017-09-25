@@ -8,7 +8,7 @@ To use taxydromikilib in a project:
 
     from taxydromikilib import Taxydromiki
     taxydromiki = Taxydromiki()
-    states = server.search(VALID_PACKAGE_NUMBER)
+    states = taxydromiki.search(VALID_PACKAGE_NUMBER)
 
     for state in states:
         if state.is_final:
