@@ -7,3 +7,9 @@ History
 ---------------------
 
 * First release
+
+
+1.0.0 (07-07-2021)
+------------------
+
+* Dropped python2.7 support.
