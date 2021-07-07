@@ -13,3 +13,9 @@ History
 ------------------
 
 * Dropped python2.7 support.
+
+
+1.0.1 (07-07-2021)
+------------------
+
+* Fixed README.rst for proper upload.
