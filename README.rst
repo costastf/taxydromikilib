@@ -22,10 +22,10 @@ Features
 --------
 
 * Searches taxydromikis site and returns a list of TrackingState objects for each state if any.
-  TrackingState objects expose the following attributes
+
+TrackingState objects expose the following attributes
     * status
     * location
     * date
     * time
     * is_final (if the current state concludes the delivery of the package)
-
